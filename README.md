@@ -31,10 +31,7 @@ Klasik Mayın Tarlası oyununu C# ve Windows Forms ile geliştirilmiş basit ve 
 4. `Debug > Start Debugging` (F5) ile çalıştırın.
 
 ## Oynanış
-- Sol tık: Hücreyi açar.
-- Sağ tık: Bayrak koyar/kaldırır.
-- Açık bir hücrenin etrafındaki bayrak sayısı, hücrenin sayısına eşitse çift tık ile çevresini hızlıca açabilirsiniz.
-- Tüm mayınlar doğru işaretlenip güvenli hücreler açıldığında oyunu kazanırsınız.
+- Mayın Bulunana Kadar Teker Teker Seçilir.
 
 ## Katkı
 - Hata/öneri için `Issues` oluşturun.
