@@ -1,0 +1,162 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Color Palette - Flat & Minimal -->
+    <Style>
+        <Style.Resources>
+            <!-- Background Colors -->
+            <Color x:Key="BgPrimary">#1a1a2e</Color>
+            <Color x:Key="BgSecondary">#16213e</Color>
+            <Color x:Key="BgCard">#0f3460</Color>
+            
+            <!-- Accent Colors -->
+            <Color x:Key="AccentPrimary">#e94560</Color>
+            <Color x:Key="AccentSuccess">#4ecca3</Color>
+            <Color x:Key="AccentWarning">#ffc857</Color>
+            
+            <!-- Text Colors -->
+            <Color x:Key="TextPrimary">#eaeaea</Color>
+            <Color x:Key="TextSecondary">#a0a0a0</Color>
+            
+            <!-- Cell Colors -->
+            <Color x:Key="CellDefault">#2d4a6e</Color>
+            <Color x:Key="CellHover">#3d5a7e</Color>
+            <Color x:Key="CellMine">#e94560</Color>
+            <Color x:Key="CellSafe">#4ecca3</Color>
+        </Style.Resources>
+    </Style>
+
+    <!-- Main Window Style -->
+    <Style Selector="Window">
+        <Setter Property="Background" Value="#1a1a2e"/>
+    </Style>
+
+    <!-- Game Cell Button Style -->
+    <Style Selector="Button.cell">
+        <Setter Property="Width" Value="48"/>
+        <Setter Property="Height" Value="48"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="#eaeaea"/>
+        <Setter Property="Background" Value="#2d4a6e"/>
+        <Setter Property="BorderBrush" Value="#3d5a7e"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="6"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.15"/>
+                <BrushTransition Property="Background" Duration="0:0:0.15"/>
+            </Transitions>
+        </Setter>
+    </Style>
+
+    <Style Selector="Button.cell:pointerover">
+        <Setter Property="Background" Value="#3d5a7e"/>
+        <Setter Property="RenderTransform" Value="scale(1.05)"/>
+    </Style>
+
+    <Style Selector="Button.cell:pressed">
+        <Setter Property="RenderTransform" Value="scale(0.95)"/>
+    </Style>
+
+    <Style Selector="Button.cell:disabled">
+        <Setter Property="Opacity" Value="1"/>
+    </Style>
+
+    <Style Selector="Button.cell.mine">
+        <Setter Property="Background" Value="#e94560"/>
+        <Setter Property="BorderBrush" Value="#ff6b85"/>
+    </Style>
+
+    <Style Selector="Button.cell.safe">
+        <Setter Property="Background" Value="#4ecca3"/>
+        <Setter Property="BorderBrush" Value="#6eecc3"/>
+        <Setter Property="Foreground" Value="#1a1a2e"/>
+    </Style>
+
+    <!-- Header Panel Style -->
+    <Style Selector="Border.header">
+        <Setter Property="Background" Value="#16213e"/>
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="Padding" Value="20,16"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+    </Style>
+
+    <!-- Stat Card Style -->
+    <Style Selector="Border.stat-card">
+        <Setter Property="Background" Value="#0f3460"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="16,12"/>
+        <Setter Property="MinWidth" Value="120"/>
+    </Style>
+
+    <!-- Primary Button Style -->
+    <Style Selector="Button.primary">
+        <Setter Property="Background" Value="#e94560"/>
+        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="24,12"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.15"/>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.15"/>
+            </Transitions>
+        </Setter>
+    </Style>
+
+    <Style Selector="Button.primary:pointerover">
+        <Setter Property="Background" Value="#ff6b85"/>
+        <Setter Property="RenderTransform" Value="scale(1.02)"/>
+    </Style>
+
+    <Style Selector="Button.primary:pressed">
+        <Setter Property="Background" Value="#c93550"/>
+        <Setter Property="RenderTransform" Value="scale(0.98)"/>
+    </Style>
+
+    <!-- Title Text -->
+    <Style Selector="TextBlock.title">
+        <Setter Property="FontSize" Value="28"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#eaeaea"/>
+    </Style>
+
+    <!-- Stat Label -->
+    <Style Selector="TextBlock.stat-label">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="#a0a0a0"/>
+        <Setter Property="Margin" Value="0,0,0,4"/>
+    </Style>
+
+    <!-- Stat Value -->
+    <Style Selector="TextBlock.stat-value">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="#eaeaea"/>
+    </Style>
+
+    <!-- Game Board Container -->
+    <Style Selector="Border.game-board">
+        <Setter Property="Background" Value="#16213e"/>
+        <Setter Property="CornerRadius" Value="16"/>
+        <Setter Property="Padding" Value="20"/>
+    </Style>
+
+    <!-- Message Overlay -->
+    <Style Selector="Border.message-overlay">
+        <Setter Property="Background" Value="#cc1a1a2e"/>
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="Padding" Value="40,30"/>
+    </Style>
+
+</Styles>
+

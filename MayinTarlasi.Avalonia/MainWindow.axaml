@@ -1,0 +1,105 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MayinTarlasi.Avalonia.MainWindow"
+        Title="Mayın Tarlası"
+        Width="800"
+        Height="600"
+        MinWidth="600"
+        MinHeight="500"
+        WindowStartupLocation="CenterScreen"
+        Background="#1a1a2e">
+
+    <Grid Margin="30" RowDefinitions="Auto,*">
+        
+        <!-- Header Section -->
+        <Border Grid.Row="0" Classes="header">
+            <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto">
+                
+                <!-- Title -->
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                    <TextBlock Classes="title" Text="Mayın Tarlası"/>
+                    <TextBlock FontSize="13" Foreground="#a0a0a0" 
+                               Text="68 hücre, 15 mayın - Hepsini bul!"/>
+                </StackPanel>
+
+                <!-- Stats -->
+                <Border Grid.Column="1" Classes="stat-card" Margin="0,0,12,0">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Classes="stat-label" Text="SEÇİLEN" HorizontalAlignment="Center"/>
+                        <TextBlock Classes="stat-value" x:Name="txtSecilen" Text="0" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="2" Classes="stat-card" Margin="0,0,12,0">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Classes="stat-label" Text="BULUNAN MAYIN" HorizontalAlignment="Center"/>
+                        <TextBlock Classes="stat-value" x:Name="txtBulunan" Text="0" HorizontalAlignment="Center">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#e94560"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="3" Classes="stat-card" Margin="0,0,20,0">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Classes="stat-label" Text="KALAN MAYIN" HorizontalAlignment="Center"/>
+                        <TextBlock Classes="stat-value" x:Name="txtKalan" Text="15" HorizontalAlignment="Center">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="#ffc857"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+
+                <!-- New Game Button -->
+                <Button Grid.Column="4" Classes="primary" 
+                        x:Name="btnYeniOyun"
+                        Content="YENİ OYUN"
+                        Click="OnNewGameClick"/>
+            </Grid>
+        </Border>
+
+        <!-- Game Board -->
+        <Border Grid.Row="1" Classes="game-board">
+            <Grid>
+                <!-- Cells Container -->
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" 
+                              VerticalScrollBarVisibility="Auto">
+                    <WrapPanel x:Name="gameBoard" 
+                               HorizontalAlignment="Center"
+                               Margin="0,10"/>
+                </ScrollViewer>
+                
+                <!-- Win Message Overlay -->
+                <Border x:Name="winOverlay" 
+                        IsVisible="False"
+                        Background="#ee1a1a2e"
+                        CornerRadius="16">
+                    <StackPanel HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                                Spacing="20">
+                        <TextBlock Text="🎉" 
+                                   FontSize="64" 
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="TEBRİKLER!" 
+                                   FontSize="36" 
+                                   FontWeight="Bold"
+                                   Foreground="#4ecca3"
+                                   HorizontalAlignment="Center"/>
+                        <TextBlock Text="Tüm mayınları buldunuz!" 
+                                   FontSize="18" 
+                                   Foreground="#a0a0a0"
+                                   HorizontalAlignment="Center"/>
+                        <Button Classes="primary" 
+                                Content="TEKRAR OYNA"
+                                HorizontalAlignment="Center"
+                                Click="OnNewGameClick"
+                                Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+
